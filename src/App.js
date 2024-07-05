@@ -8,8 +8,8 @@ import Projectlist from './pages/project-list/Projectlist';
 
 function App() {
   return (
-  
-       <Router>
+     <div >
+           <Router>
           <Routes>
              <Route path="/" element={<Login />} />
              <Route path="/dashboard" element={<Dashboard />} />
@@ -17,7 +17,7 @@ function App() {
              <Route path="/project-listing" element={<Projectlist />} />
           </Routes>
        </Router>
-    
+     </div>
   );
 }
 

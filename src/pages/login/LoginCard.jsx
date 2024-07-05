@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 
 const LoginCard = () => {
 
@@ -33,11 +35,14 @@ const LoginCard = () => {
             method : 'POST',
             headers : {
                 "Content-type" : "application/json",
-            }
+            },
+          
          })
          const data = await response.json()
          if(response.ok) {
+            // Cookies.set('id', data.userId, { expires: 7 });
              navigate('/dashboard')
+             console.log(data)
            
           }else{
             if(response.status === 400) {
@@ -71,10 +76,10 @@ const LoginCard = () => {
     
 
     return (
-        <div className='flex flex-col gap-4 items-center'>
+        <div className='flex flex-col gap-4 items-center w-full '>
         <div className="shadow-lg sm:shadow-none w-[410px] sm:mt-24 sm:w-full  px-8 sm:px-2  bg-[#ffffff] sm:bg-transparent  rounded-2xl  mb-1 sm:mb-0">
             <div className="py-8 px-3">
-                <h2 className="text-xl  text-center sm:text-left text-gray-900  font-normal mb-8">Login to get started</h2>
+                <h2 className="text-xl   text-center sm:text-left text-gray-900  font-normal mb-8">Login to get started</h2>
 
                 <div className="flex flex-col items-center sm:items-start">
                     <div className="bg-white w-full  p-2  mb-3">

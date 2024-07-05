@@ -16,10 +16,10 @@ module.exports = {
       },
     },
     screens: {
+      'sm': {'min': '0px', 'max': '700px'},
+      'md': {'min': '701px', 'max': '1100px'},
       'xl': {'max': '2222px'},
-      'sm': {'max': '1000px'},
-    
-    }
+    },
   },
   plugins: [],
 }

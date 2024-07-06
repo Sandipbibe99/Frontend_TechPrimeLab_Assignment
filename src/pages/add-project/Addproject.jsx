@@ -33,7 +33,7 @@ const Addproject = () => {
     endDate : '',
     location : '',
     status : 'registered',
-    userId : ''
+    // userId : ''
 
 }
 const [projectData , setProjectData] = useState(data)
@@ -53,16 +53,16 @@ const handleInputChange = (event) => {
 const handleSubmit = async(e) => {
       e.preventDefault()
     
-      const id =  Cookies.get('id');
+      // const id =  Cookies.get('id');
      
 
-    const newData = {
-      ...projectData ,  userId: id
-    }
+    // const newData = {
+    //   ...projectData ,  userId: id
+    // }
 
       try{
-        const response = await fetch("http://192.168.0.106:4000/api/project/addproject" , {
-            body : JSON.stringify(newData),
+        const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/project/addproject" , {
+            body : JSON.stringify(projectData),
             method : 'POST',
             headers : {
                 "Content-type" : "application/json",
@@ -70,12 +70,12 @@ const handleSubmit = async(e) => {
          })
          const data = await response.json()
          if(response.ok) {
-          console.log(newData)
+          // console.log(newData)
              alert(data.message)
              setProjectData(data)
           }else{
           alert(data.error)
-          console.log(newData)
+          // console.log(newData)
           }
       }
       catch(error) {

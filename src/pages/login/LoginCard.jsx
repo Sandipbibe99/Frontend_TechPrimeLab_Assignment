@@ -30,12 +30,13 @@ const LoginCard = () => {
     const handleLogin = async(event) => {
          event.preventDefault()
       try{
-        const response = await fetch("http://192.168.0.106:4000/api/user/login" , {
+        const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/user/login" , {
             body : JSON.stringify(loginData),
             method : 'POST',
             headers : {
                 "Content-type" : "application/json",
             },
+            credentials: 'include',
           
          })
          const data = await response.json()

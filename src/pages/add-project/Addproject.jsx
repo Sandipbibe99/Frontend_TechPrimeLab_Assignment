@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Cookies from 'js-cookie';
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
 
@@ -49,9 +48,9 @@ const handleInputChange = (event) => {
 
 }
 
-const clearInput = () => {{
+const clearInput = () => {
   setProjectData(data)
-}}
+}
 useEffect(() => {
   clearInput()
 } , [])
@@ -115,7 +114,7 @@ const handleSubmit = async(e) => {
        <div className='relative w-[91vw] sm:w-[94.7vw] h-auto , bg-white -mt-7 sm:mt-3 rounded-xl  p-5 pb-32 sm:pb-5 '>
        {success && (
          <div class="p-4 mb-4 text-sm flex gap-2 text-green-900 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-600" role="alert">
-           <img src='/image/check.png' className='w-5'></img>
+           <img alt='hi' src='/image/check.png' className='w-5'></img>
          <span class="font-medium ">{success}</span>
        </div>
       ) }

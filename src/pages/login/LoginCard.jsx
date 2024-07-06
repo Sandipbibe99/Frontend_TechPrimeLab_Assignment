@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
-import Cookies from 'js-cookie';
+
 
 
 const LoginCard = () => {
@@ -41,7 +41,7 @@ const LoginCard = () => {
          })
          const data = await response.json()
          if(response.ok) {
-            // Cookies.set('id', data.userId, { expires: 7 });
+          
              navigate('/dashboard')
              console.log(data)
            

@@ -20,6 +20,7 @@ const List = ({ handleStatus }) => {
                             <span className="hidden sm:inline font-semibold text-[14.5px] ml-auto">
                                 {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
                             </span>
+                            
                         </div>
                         <div className="-mt-3 text-[12.5px]   py-4 whitespace-nowrap text-gray-900 ">
                             {item.startDate} to {item.endDate}

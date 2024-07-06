@@ -9,8 +9,8 @@
         "mocha": true,
         "jquery": true,
         "es2021": true,
-        "serviceworker": true,
-        "CI": false
+        "serviceworker": true
+        
       },
     "extends": [
       "eslint:recommended",

@@ -1,8 +1,42 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 const HighChart = () => {
+
+  const [graphData , setGraphData] = useState("")
+
+  const getChartData = useMemo(async () => {
+    try {
+        const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/getCountByStatusAndDepartment", {
+            method: "GET",
+            headers: {
+                "Content-type": "application/json",
+            },
+            credentials: "include"
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setGraphData(data);
+          console.log("fdfdfddf" , data)
+        } else {
+            console.log(data);
+        }
+    } catch (error) {
+        console.log("Internal server error" + error);
+    }
+} , [])
+
+// const totalData = graphData.series.find(series => series.name === 'total').data;
+// const percentages = totalData.map((total, index) => {
+//   if (total === 0) {
+//     return "0.00"; 
+//   }
+//   const closed = graphData.series.find(series => series.name === 'closed').data[index];
+//   return ((closed / total) * 100).toFixed(2);;
+// });
+
+
     const options = {
         chart: {
           type: 'column',
@@ -15,11 +49,11 @@ const HighChart = () => {
           text: '',
           align: 'left'
       },
-        xAxis: {
-          categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
-         
-         
-        },
+      xAxis: {
+        categories: graphData.categories
+        // graphData.categories.map((category, index) => ` <span style="fontWeight : 1000"> </span><br/> ${category} `)
+      },
+      // ${percentages[index]}
         yAxis: {
           min: 0,
           title: {
@@ -32,16 +66,8 @@ const HighChart = () => {
             borderWidth: 0
           }
         },
-        series: [
-          {
-            name: 'Corn',
-            data: [406292, 260000, 107000, 68300, 27500, 14500]
-          },
-          {
-            name: 'Wheat',
-            data: [51086, 136000, 5500, 141000, 107180, 77000]
-          }
-        ]
+        
+        series: graphData.series
       };
   return (
     <div className='w-2/5 sm:w-[95vw] ml-20  mt-1 sm:ml-2'>

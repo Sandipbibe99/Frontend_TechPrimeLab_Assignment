@@ -16,6 +16,17 @@
     scrollbar-width: none; 
 }
 
-table tr th{
+table tr th {
   font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+table tr td {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+.text-capitalize div{
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
 }

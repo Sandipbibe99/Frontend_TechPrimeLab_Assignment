@@ -2,13 +2,16 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/login/Login';
 import Dashboard from './pages/dashboard/Dashboard';
-import Addproject from './pages/add-project/Addproject';
-import Projectlist from './pages/project-list/Projectlist';
+
+import { lazy } from 'react';
+
+const Addproject = lazy(() => import("./pages/add-project/Addproject"))
+const Projectlist = lazy(() => import("./pages/project-list/Projectlist"))
 
 
 function App() {
   return (
-     <div >
+     
            <Router>
           <Routes>
              <Route path="/" element={<Login />} />
@@ -17,7 +20,7 @@ function App() {
              <Route path="/project-listing" element={<Projectlist />} />
           </Routes>
        </Router>
-     </div>
+   
   );
 }
 

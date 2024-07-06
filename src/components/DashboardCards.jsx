@@ -2,13 +2,7 @@ import React from 'react'
 
 const DashboardCards = ({statusData}) => {
 
-    const data = [
-        { title: 'Total Project', count: '8' },
-        { title: 'Closed', count: '2' },
-        { title: 'Running', count: '3' },
-        { title: 'Closure Delay', count: '2' },
-        { title: 'Cancelled', count: '3' }
-      ];
+   
 
     return (
         <div className="grid grid-cols-5 gap-4 md:gap-40 sm:gap-40 ml-16 sm:ml-0 px-8 sm:px-2 relative overflow-x-auto -mt-5 md:mt-5 sm:mt-5 scrollnone pb-5">

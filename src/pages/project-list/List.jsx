@@ -3,21 +3,9 @@ import { ProjectContext } from '../../context/ProjectContext';
 
 const List = ({ handleStatus }) => {
     const {
-        tableData,
-        getProjectData,
-        currentPage,
+        
         currentPageData,
-        handleNextPage,
-        handlePreviousPage,
-        handlePageClick,
-        handleFirstPage,
-        handleLastPage,
-        totalPages,
-        searchInput,
-        handleSelectChange,
-        handleInutChange,
-        handleClearInput,
-        handleClearSelect
+       
     } = useContext(ProjectContext);
 
 

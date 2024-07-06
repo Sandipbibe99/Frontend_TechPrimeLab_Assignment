@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Sidebar from '../../components/Sidebar'
 import Navbar from '../../components/Navbar'
 import { IoSearchOutline } from "react-icons/io5";
@@ -11,7 +11,7 @@ import Drawer from '../../components/Drawer';
 
 const Projectlist = () => {
     const {
-        tableData,
+      
         getProjectData,
         currentPage,
         currentPageData,

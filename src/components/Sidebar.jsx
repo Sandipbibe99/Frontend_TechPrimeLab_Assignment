@@ -49,7 +49,7 @@ import { BASE_URL } from '../Json/Json'
                 <div className='flex h-full justify-center sm:justify-evenly items-center flex-col sm:flex-row gap-8 sm:gap-4'>
                     {images.map((item, index) => (
                         <React.Fragment key={index}>
-                            <Link to={item.link} >
+                            <Link to={item.link}  >
                             <img alt={item.alt} src={index === activeIndex ? item.activesrc  : item.src }></img>
                             </Link>
                             {index === 1 && (

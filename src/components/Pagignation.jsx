@@ -2,7 +2,7 @@ import React from 'react'
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 
-const Pagination = ({ currentPage, totalPages, handlePageClick, handleNextPage, handlePreviousPage, handleFirstPage, handleLastPage }) => {
+const Pagination = React.memo(({ currentPage, totalPages, handlePageClick, handleNextPage, handlePreviousPage, handleFirstPage, handleLastPage }) => {
   return (
     <div className="block sm:hidden flex items-center gap-4 justify-center mt-4 ">
       <button
@@ -48,6 +48,6 @@ const Pagination = ({ currentPage, totalPages, handlePageClick, handleNextPage, 
       </button>
     </div>
   );
-};
+});
 
 export default Pagination;

@@ -1,12 +1,24 @@
 import React, { useContext } from 'react'
 import { ProjectContext } from '../../context/ProjectContext';
+import { SkeletonProjectCardMobile } from '../../components/Skeletons';
 
-const List = ({ handleStatus }) => {
-    const { currentPageData } = useContext(ProjectContext);
+const List = ({ handleStatus  }) => {
+    const {sortedAndFilteredData} = useContext(ProjectContext)
+
+    if (!sortedAndFilteredData || sortedAndFilteredData.length === 0) {
+        return (
+          <div >
+            {[...Array(5)].map((_, index) => (
+              <SkeletonProjectCardMobile key={index} />
+            ))}
+          </div>
+        );
+      }
+   
     return (
         <div className='p-1 space-y-3'>
-            {currentPageData.map((item, index) => (
-                <div key={index} className="bg-white  rounded-2xl p-4 shadow-lg">
+            {sortedAndFilteredData.map((item, index) => (
+                <div key={index} className="bg-white rounded-2xl p-4 shadow-lg">
                     <div className="text-gray-900 ">
                         <div className="flex justify-between">
                             <span className="font-semibold text-[14.5]">{item.projectName[0].toUpperCase() + item.projectName.slice(1)}</span>

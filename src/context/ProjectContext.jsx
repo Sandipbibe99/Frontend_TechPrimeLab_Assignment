@@ -8,23 +8,8 @@ export const ProjectProvider = ({ children }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchInput, setSearchInput] = useState('')
     const [selectInput, setSelectInput] = useState()
-    const [projectsPerPage, setProjectsPerPage] = useState("");
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 640) {
-                setProjectsPerPage(tableData.length);
-            } else {
-                setProjectsPerPage(7);
-            }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [tableData]);
+    const [projectsPerPage, setProjectsPerPage] = useState(7);
+    
     const getProjectData = async () => {
         try {
             const response = await fetch(`${BASE_URL}/api/project/getProjectsbyUserid`, {
@@ -48,6 +33,8 @@ export const ProjectProvider = ({ children }) => {
     useEffect(() => {
         getProjectData();
     }, []);
+
+
 
     const sortedData = (data) => {
         if (!selectInput) {
@@ -73,6 +60,8 @@ export const ProjectProvider = ({ children }) => {
         return values.some(value => value.includes(searchInput.toLocaleLowerCase()))
 
     });
+
+
 
     const sortedAndFilteredData = sortedData(filteredData)
     const totalPages = Math.ceil(filteredData.length / projectsPerPage);
@@ -133,6 +122,7 @@ export const ProjectProvider = ({ children }) => {
     const lastIndex = currentPage * projectsPerPage;
     const firstIndex = lastIndex - projectsPerPage;
     const currentPageData = sortedAndFilteredData.slice(firstIndex, lastIndex);
+    
     const isUserAuthenticate = async () => {
         try {
             const response = await fetch(`${BASE_URL}/api/project/checkAuth`, {
@@ -158,7 +148,7 @@ export const ProjectProvider = ({ children }) => {
         <ProjectContext.Provider value={{
             getProjectData, tableData, setTableData, currentPage, totalPages, currentPageData,
             handleNextPage, handlePreviousPage, handlePageClick, handleFirstPage, handleLastPage, handleInutChange, searchInput, handleSelectChange,
-            handleClearInput, handleClearSelect, handleOpenDrawer, drawer, handleDrawerSelect, isUserAuthenticate
+            handleClearInput, handleClearSelect, handleOpenDrawer, drawer, handleDrawerSelect, isUserAuthenticate , sortedAndFilteredData
         }}
         >
             {children}

@@ -10,6 +10,7 @@ import { PiListMagnifyingGlassLight } from "react-icons/pi";
 import Drawer from '../../components/Drawer';
 import { useNavigate } from 'react-router-dom';
 import { BASE_URL, sortSelectArray } from '../../Json/Json';
+import { SkeletonTable } from '../../components/Skeletons';
 
 const Projectlist = () => {
     const { isUserAuthenticate } = useContext(ProjectContext);
@@ -45,7 +46,7 @@ const Projectlist = () => {
 
     const tableHeaders = ['Project Name', 'Reason', 'Type', 'Division', 'Category', 'Priority', 'Dept.', 'Location', 'Status', '', '', '']
   
-
+    const isLoading = !currentPageData || currentPageData.length === 0;
 
     const handleStatus = async (status, projectId) => {
         try {
@@ -131,7 +132,10 @@ const Projectlist = () => {
                                 </tr>
                             </thead>
                             <tbody className="bg-white sm:hidden divide-y divide-gray-200  ">
-                                {currentPageData.map((item, index) => (
+                            {isLoading ? (
+                                    [...Array(7)].map((_, index) => <SkeletonTable key={index} />)
+                                 ) : (
+                                currentPageData.map((item, index) => (
                                     <tr key={index} className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700">
                                         <td className="px-3 text-[12.5px]   py-4 whitespace-nowrap text-gray-900 dark:text-white ">
                                             <span className='font-semibold text-[14.5px]'>{item.projectName} </span><br></br>
@@ -179,14 +183,15 @@ const Projectlist = () => {
 
                                         </td>
                                     </tr>
-                                ))}
+                                ))
+                            )}
                             </tbody>
-
+  
                         </table>
                     </div>
                 </div>
                 <div class="relative overflow-x-auto sm:block xl:hidden md:hidden">
-                    <List handleStatus={handleStatus} />
+                    <List handleStatus={handleStatus} currentPageData={currentPageData} />
                 </div>
             </div>
             <Pagination

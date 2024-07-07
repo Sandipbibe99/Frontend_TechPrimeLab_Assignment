@@ -25,7 +25,7 @@ export const categoryData = [
     'Vadodara', 'Ghaziabad', 'Ludhiana', 'Agra', 'Nashik', 'Faridabad', 'Meerut', 'Rajkot', 'Varanasi', 'Srinagar', 'Aurangabad', 'Dhanbad'
   ];
 
-  // options.js
+  
 
 export const reasonData = [
     { value: 'business', label: 'For Business' },

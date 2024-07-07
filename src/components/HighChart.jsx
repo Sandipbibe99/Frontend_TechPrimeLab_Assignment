@@ -8,7 +8,7 @@ const HighChart = () => {
 
   const getChartData = useMemo(async () => {
     try {
-        const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/getCountByStatusAndDepartment", {
+        const response = await fetch("http://localhost:4000/api/project/getCountByStatusAndDepartment", {
             method: "GET",
             headers: {
                 "Content-type": "application/json",

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { BASE_URL } from '../Json/Json';
 
 const HighChart = () => {
 

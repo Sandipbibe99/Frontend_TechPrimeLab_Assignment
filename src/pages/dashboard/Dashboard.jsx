@@ -5,6 +5,7 @@ import HighChart from '../../components/HighChart'
 import Navbar from '../../components/Navbar'
 import { useNavigate } from 'react-router-dom'
 import { ProjectContext } from '../../context/ProjectContext'
+import { BASE_URL } from '../../Json/Json'
 
 const Dashboard = () => {
   const { isUserAuthenticate } = useContext(ProjectContext);

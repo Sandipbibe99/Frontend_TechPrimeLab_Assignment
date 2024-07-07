@@ -9,7 +9,7 @@ import List from './List';
 import { PiListMagnifyingGlassLight } from "react-icons/pi";
 import Drawer from '../../components/Drawer';
 import { useNavigate } from 'react-router-dom';
-import { sortSelectArray } from '../../Json/Json';
+import { BASE_URL, sortSelectArray } from '../../Json/Json';
 
 const Projectlist = () => {
     const { isUserAuthenticate } = useContext(ProjectContext);
@@ -60,12 +60,12 @@ const Projectlist = () => {
             const data = await response.json();
             if (response.ok) {
                 getProjectData()
-                console.log(data.message)
+               
             } else {
-                console.log(data.error)
+               
             }
         } catch (error) {
-            console.error('Error updating status:', error);
+           
         }
     };
 

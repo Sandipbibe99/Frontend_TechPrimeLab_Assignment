@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
 import { ProjectContext } from '../../context/ProjectContext';
 import { useNavigate } from 'react-router-dom';
-import { categoryData, citiesData, departmentData, divisionData, intialProjectData, priorityData, reasonData, typeData } from '../../Json/Json';
+import { BASE_URL, categoryData, citiesData, departmentData, divisionData, intialProjectData, priorityData, reasonData, typeData } from '../../Json/Json';
 
 const Addproject = () => {
   const { isUserAuthenticate } = useContext(ProjectContext);
@@ -64,7 +64,7 @@ const Addproject = () => {
       }
     }
     catch (error) {
-      console.log(error)
+     
 
     }
   }

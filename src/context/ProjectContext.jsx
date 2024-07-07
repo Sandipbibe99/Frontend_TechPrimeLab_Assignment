@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { BASE_URL } from '../Json/Json';
 
 export const ProjectContext = createContext();
 
@@ -134,7 +135,7 @@ export const ProjectProvider = ({ children }) => {
     const currentPageData = sortedAndFilteredData.slice(firstIndex, lastIndex);
     const isUserAuthenticate = async () => {
         try {
-            const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/project/checkAuth", {
+            const response = await fetch(`${BASE_URL}/api/project/checkAuth`, {
                 method: 'GET',
                 headers: {
                     "Content-type": "application/json",

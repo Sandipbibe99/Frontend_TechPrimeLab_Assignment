@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { BASE_URL } from '../Json/Json'
 
     const Sidebar = () => {
         const images = [
@@ -17,7 +18,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
         } , [location.pathname])
 
         const handleLogout = async() => {
-            console.log("first")
             try{
                   const response = await fetch(`${BASE_URL}/api/user/logout` , {
                     method: 'POST',
@@ -29,10 +29,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
                 const data = await response.json();
                 if(response.ok) {
                     navigate('/')
-                    console.log(data.Message)
+                   
                 }
                 else{
-                    console.log(data.error)
+                  
                 }
             }
             catch (error) {

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { BASE_URL } from '../../Json/Json';
 
 const LoginCard = () => {
     const [visible, setVisible] = useState(false)
@@ -52,7 +53,7 @@ const LoginCard = () => {
                 navigate('/dashboard');
             } else {
                 if (response.status === 400) {
-                    console.log("ok")
+                   
                 }
                 setErrorMessage(data.error)
                 setTimeout(() => {
@@ -61,7 +62,7 @@ const LoginCard = () => {
             }
         }
         catch (error) {
-            console.log(error)
+           
         }
     }
 

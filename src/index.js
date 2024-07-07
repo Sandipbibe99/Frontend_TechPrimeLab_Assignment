@@ -8,15 +8,14 @@ import { ProjectProvider } from './context/ProjectContext';
 
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Suspense fallback={<Fallback />}>
-     
-        <ProjectProvider>
+     <ProjectProvider>
           <App />
         </ProjectProvider>
-     
     </Suspense>
   </React.StrictMode>
 );

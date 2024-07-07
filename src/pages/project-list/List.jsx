@@ -2,25 +2,17 @@ import React, { useContext } from 'react'
 import { ProjectContext } from '../../context/ProjectContext';
 
 const List = ({ handleStatus }) => {
-    const {
-        
-        currentPageData,
-       
-    } = useContext(ProjectContext);
-
-
-
+    const { currentPageData } = useContext(ProjectContext);
     return (
         <div className='p-1 space-y-3'>
             {currentPageData.map((item, index) => (
                 <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg">
                     <div className="text-gray-900 ">
                         <div className="flex justify-between">
-                            <span className="font-semibold text-[14.5]">{item.projectName.toUpperCase() + item.status.slice(1)}</span>
+                            <span className="font-semibold text-[14.5]">{item.projectName[0].toUpperCase() + item.projectName.slice(1)}</span>
                             <span className="hidden sm:inline font-semibold text-[14.5px] ml-auto">
                                 {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
                             </span>
-                            
                         </div>
                         <div className="-mt-3 text-[12.5px]   py-4 whitespace-nowrap text-gray-900 ">
                             {item.startDate} to {item.endDate}
@@ -66,8 +58,6 @@ const List = ({ handleStatus }) => {
                 </div>
             ))}
         </div>
-
-
     )
 }
 

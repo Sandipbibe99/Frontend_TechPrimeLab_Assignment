@@ -12,16 +12,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
         const navigate = useNavigate();
 
         useEffect(() => {
-
-            const locationIndex = images.findIndex(img =>  img.link === location.pathname)
+             const locationIndex = images.findIndex(img =>  img.link === location.pathname)
             setActiveIndex(locationIndex)
         } , [location.pathname])
 
         const handleLogout = async() => {
             console.log("first")
             try{
-                
-                const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/user/logout" , {
+                  const response = await fetch("http://localhost:4000/api/user/logout" , {
                     method: 'POST',
                     credentials : "include",
                     headers : {
@@ -29,7 +27,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
                     }
                 })
                 const data = await response.json();
-
                 if(response.ok) {
                     navigate('/')
                     console.log(data.Message)
@@ -43,8 +40,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
             }
         }
         
-
-        return (
+         return (
             <div className='fixed top-0 sm:top-auto sm:bottom-0 left-0 w-14 sm:w-full h-screen sm:h-[8vh] bg-white shadow-lg rounded-sm sm:rounded-full py-5 ' style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px"}}>          
                 <div className='flex h-full justify-center sm:justify-evenly items-center flex-col sm:flex-row gap-8 sm:gap-4'>
                     {images.map((item, index) => (
@@ -57,8 +53,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
                             ) }
                         </React.Fragment>
                     ))}
-
-                </div>
+              </div>
                 <div className='fixed bottom-5 left-4 sm:top-5 sm:right-4 sm:bottom-auto sm:left-auto'>
                 <button onClick={handleLogout}> <img  alt='logout' className='cursor-pointer' src='/image/Logout.svg'></img></button> 
                 </div>
@@ -66,4 +61,4 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
         )
     }
 
-    export default Sidebar
+export default Sidebar

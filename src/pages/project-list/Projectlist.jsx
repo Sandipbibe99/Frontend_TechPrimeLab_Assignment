@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Sidebar from '../../components/Sidebar'
 import Navbar from '../../components/Navbar'
 import { IoSearchOutline } from "react-icons/io5";
@@ -25,7 +25,7 @@ const Projectlist = () => {
         handleSelectChange,
         handleInutChange,
         handleClearInput,
-        // handleClearSelect , 
+        handleClearSelect , 
         handleOpenDrawer ,
          drawer
     } = useContext(ProjectContext);
@@ -52,7 +52,7 @@ const Projectlist = () => {
 
     const handleStatus = async (status, projectId) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/project/updatestatus?_id=${projectId}&status=${status}`, {
+            const response = await fetch(`https://sandip-tech-prime-lab.netlify.app/api/project/updatestatus?_id=${projectId}&status=${status}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -75,11 +75,11 @@ const Projectlist = () => {
 
     };
 
-    // useEffect(() => {
-    //     getProjectData(); 
-    //     handleClearInput();
-    //     handleClearSelect();
-    //   }, [])
+    useEffect(() => {
+        getProjectData(); 
+        handleClearInput();
+        handleClearSelect();
+      }, [])
 
      
  

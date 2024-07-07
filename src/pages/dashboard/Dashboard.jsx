@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [statusData , setStatusData] = useState("")
   const fetchCountAccordingToStatus = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/project/getCountAccordingToStatus", {
+      const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/getCountAccordingToStatus", {
         method: "GET",
         headers: {
           "Content-type": "application/json"
@@ -23,7 +23,7 @@ const Dashboard = () => {
         console.log(data.error);
       }
 
-      const response2 = await fetch("http://localhost:4000/api/project/getClosureDelayCount", {
+      const response2 = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/getClosureDelayCount", {
         method: "GET",
         headers: {
           "Content-type": "application/json"

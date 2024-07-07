@@ -1,4 +1,4 @@
-import React, {  useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar';
 import Sidebar from '../../components/Sidebar';
 
@@ -48,12 +48,12 @@ const handleInputChange = (event) => {
 
 }
 
-// const clearInput = () => {
-//   setProjectData(data)
-// }
-// useEffect(() => {
-//   clearInput()
-// } , [])
+const clearInput = () => {
+  setProjectData(data)
+}
+useEffect(() => {
+  clearInput()
+} , [])
 
 
 const handleSubmit = async(e) => {
@@ -67,7 +67,7 @@ const handleSubmit = async(e) => {
     // }
 
       try{
-        const response = await fetch("http://localhost:4000/api/project/addproject" , {
+        const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/addproject" , {
             body : JSON.stringify(projectData),
             method : 'POST',
             credentials: 'include',
@@ -78,7 +78,7 @@ const handleSubmit = async(e) => {
          const data = await response.json()
          if(response.ok) {
           
-            
+             clearInput()
              setSuccess(data.message)
              setTimeout(() => {
               setSuccess("")

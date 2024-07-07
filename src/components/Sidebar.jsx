@@ -21,7 +21,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
             console.log("first")
             try{
                 
-                const response = await fetch("http://localhost:4000/api/user/logout" , {
+                const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/user/logout" , {
                     method: 'POST',
                     credentials : "include",
                     headers : {

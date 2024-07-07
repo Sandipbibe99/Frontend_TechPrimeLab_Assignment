@@ -29,3 +29,18 @@ table tr td {
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
 }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-animation {
+  animation: rotate 2s linear infinite;
+}
+
+

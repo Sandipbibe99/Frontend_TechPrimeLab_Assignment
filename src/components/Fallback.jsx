@@ -2,9 +2,9 @@ import React from 'react'
 
 const Fallback = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen min-w-screen bg-[#e2ecf2]">
+    <div className="flex items-center justify-center min-h-screen min-w-screen bg-[#1375d0]">
       <div className="text-center">
-        <h1 className="text-lg font-semibold text-gray-700 animate-pulse">Loading...</h1>
+        <img alt="logo" src="/image/Logo.svg" className="rotate-animation"   />
       </div>
     </div>
   )

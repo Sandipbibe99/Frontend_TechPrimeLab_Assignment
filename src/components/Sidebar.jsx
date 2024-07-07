@@ -1,8 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../Json/Json'
+import { ProjectContext } from '../context/ProjectContext';
 
     const Sidebar = () => {
+
+        const navigate = useNavigate();
+      
+
         const images = [
             { link: "/dashboard", alt: "Dashboard", src: "/image/Dashboard.svg" , activesrc : "/image/Dashboard-active.svg" },
             { link: "/project-listing", alt: "Project-list", src: "/image/Project-list.svg" , activesrc : "/image/Project-list-active.svg" },
@@ -10,7 +15,7 @@ import { BASE_URL } from '../Json/Json'
         ]
         const [activeIndex , setActiveIndex] =  useState(null)
         const location = useLocation();
-        const navigate = useNavigate();
+       
 
         useEffect(() => {
              const locationIndex = images.findIndex(img =>  img.link === location.pathname)
@@ -29,8 +34,7 @@ import { BASE_URL } from '../Json/Json'
                 const data = await response.json();
                 if(response.ok) {
                     navigate('/')
-                   
-                }
+                   }
                 else{
                   
                 }

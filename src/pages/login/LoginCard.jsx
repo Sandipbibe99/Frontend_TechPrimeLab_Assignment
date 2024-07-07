@@ -52,9 +52,7 @@ const LoginCard = () => {
             if (response.ok) {
                 navigate('/dashboard');
             } else {
-                if (response.status === 400) {
-                   
-                }
+              
                 setErrorMessage(data.error)
                 setTimeout(() => {
                     setErrorMessage('')

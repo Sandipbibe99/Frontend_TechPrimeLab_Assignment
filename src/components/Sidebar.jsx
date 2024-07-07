@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../Json/Json'
 
@@ -31,7 +31,7 @@ import { BASE_URL } from '../Json/Json'
                     },
                     credentials: "include"
                 })
-                const data = await response.json();
+               await response.json();
                 if(response.ok) {
                     navigate('/')
                    }

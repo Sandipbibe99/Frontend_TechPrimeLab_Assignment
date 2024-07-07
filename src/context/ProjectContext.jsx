@@ -157,7 +157,7 @@ export const ProjectProvider = ({ children }) => {
     return (
         <ProjectContext.Provider value={{
             getProjectData, tableData, setTableData, currentPage, totalPages, currentPageData,
-            handleNextPage, handleClearInput, handlePreviousPage, handlePageClick, handleFirstPage, handleLastPage, handleInutChange, searchInput, handleSelectChange,
+            handleNextPage, handlePreviousPage, handlePageClick, handleFirstPage, handleLastPage, handleInutChange, searchInput, handleSelectChange,
             handleClearInput, handleClearSelect, handleOpenDrawer, drawer, handleDrawerSelect, isUserAuthenticate
         }}
         >

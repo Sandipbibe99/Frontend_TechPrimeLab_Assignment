@@ -57,7 +57,7 @@ const Projectlist = () => {
                 credentials: "include"
             });
 
-            const data = await response.json();
+            await response.json();
             if (response.ok) {
                 getProjectData()
                
@@ -118,8 +118,8 @@ const Projectlist = () => {
                         </div>
                     </div>
                     <div class="relative overflow-x-auto">
-                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs sm:hidden text-gray-700  bg-[#ebf5ff] dark:bg-gray-700 dark:text-gray-400">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+                            <thead class="text-xs sm:hidden text-gray-700  bg-[#ebf5ff]  ">
                                 <tr>
                                     {tableHeaders.map((item, index) => (
                                         <React.Fragment key={index}>
@@ -130,7 +130,7 @@ const Projectlist = () => {
                                     ))}
                                 </tr>
                             </thead>
-                            <tbody className="bg-white sm:hidden divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700 ">
+                            <tbody className="bg-white sm:hidden divide-y divide-gray-200  ">
                                 {currentPageData.map((item, index) => (
                                     <tr key={index} className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700">
                                         <td className="px-3 text-[12.5px]   py-4 whitespace-nowrap text-gray-900 dark:text-white ">

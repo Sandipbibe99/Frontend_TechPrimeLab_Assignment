@@ -6,7 +6,7 @@ const List = ({ handleStatus }) => {
     return (
         <div className='p-1 space-y-3'>
             {currentPageData.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg">
+                <div key={index} className="bg-white  rounded-2xl p-4 shadow-lg">
                     <div className="text-gray-900 ">
                         <div className="flex justify-between">
                             <span className="font-semibold text-[14.5]">{item.projectName[0].toUpperCase() + item.projectName.slice(1)}</span>

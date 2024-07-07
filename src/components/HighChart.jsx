@@ -46,8 +46,8 @@ const HighChart = () => {
     chart: {
       type: 'column',
       height: 380,
-      borderRadius: '10px',
-      padding: "20px",
+      borderRadius: 10,
+      padding: 20 ,
       spacing: [30, 10, 10, 10]
     },
     title: {

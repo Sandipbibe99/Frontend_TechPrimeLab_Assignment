@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../Json/Json'
-import { ProjectContext } from '../context/ProjectContext';
+
 
     const Sidebar = () => {
 
@@ -26,10 +26,10 @@ import { ProjectContext } from '../context/ProjectContext';
             try{
                   const response = await fetch(`${BASE_URL}/api/user/logout` , {
                     method: 'POST',
-                    credentials : "include",
                     headers : {
                         'Content-type' : 'application/json'
-                    }
+                    },
+                    credentials: "include"
                 })
                 const data = await response.json();
                 if(response.ok) {

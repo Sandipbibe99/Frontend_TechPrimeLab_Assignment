@@ -52,7 +52,7 @@ const Projectlist = () => {
 
     const handleStatus = async (status, projectId) => {
         try {
-            const response = await fetch(`https://sandip-tech-prime-lab.netlify.app/api/project/updatestatus?_id=${projectId}&status=${status}`, {
+            const response = await fetch(`https://backend-techprimelab-assignment.onrender.com/api/project/updatestatus?_id=${projectId}&status=${status}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

@@ -65,9 +65,9 @@ const handleSubmit = async(e) => {
     // const newData = {
     //   ...projectData ,  userId: id
     // }
-
+    
       try{
-        const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/addproject" , {
+        const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/project/addproject" , {
             body : JSON.stringify(projectData),
             method : 'POST',
             credentials: 'include',

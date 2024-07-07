@@ -34,7 +34,7 @@ export const ProjectProvider = ({ children }) => {
 
     const getProjectData = async () => {
         try {
-            const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/project/getProjectsbyUserid", {
+            const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/project/getProjectsbyUserid", {
                 method: "GET",
                 headers: {
                     "Content-type": "application/json",

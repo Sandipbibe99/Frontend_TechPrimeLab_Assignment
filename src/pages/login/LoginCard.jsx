@@ -30,7 +30,7 @@ const LoginCard = () => {
     const handleLogin = async(event) => {
          event.preventDefault()
       try{
-        const response = await fetch("https://sandip-tech-prime-lab.netlify.app/api/user/login" , {
+        const response = await fetch("https://backend-techprimelab-assignment.onrender.com/api/user/login" , {
             body : JSON.stringify(loginData),
             method : 'POST',
             headers : {
@@ -48,6 +48,7 @@ const LoginCard = () => {
           }else{
             if(response.status === 400) {
                 SetError(true)
+                console.log("ok")
             }
             setErrorMessage(data.error)
             setTimeout(() => {

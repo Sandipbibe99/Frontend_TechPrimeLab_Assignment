@@ -40,7 +40,7 @@ const Addproject = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:4000/api/project/addproject", {
+      const response = await fetch(`${BASE_URL}/api/project/addproject`, {
         body: JSON.stringify(projectData),
         method: 'POST',
         credentials: 'include',

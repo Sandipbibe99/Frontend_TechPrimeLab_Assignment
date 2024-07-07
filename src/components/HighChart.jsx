@@ -12,7 +12,7 @@ const HighChart = () => {
 
   const getChartData = async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/project/getCountByStatusAndDepartment", {
+      const response = await fetch(`${BASE_URL}/api/project/getCountByStatusAndDepartment`, {
         method: "GET",
         headers: {
           "Content-type": "application/json",

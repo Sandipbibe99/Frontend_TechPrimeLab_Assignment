@@ -39,7 +39,7 @@ const LoginCard = () => {
             return;
         }
         try {
-            const response = await fetch("http://localhost:4000/api/user/login", {
+            const response = await fetch(`${BASE_URL}/api/user/login`, {
                 body: JSON.stringify(loginData),
                 method: 'POST',
                 headers: {

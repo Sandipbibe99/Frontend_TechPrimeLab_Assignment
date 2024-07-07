@@ -19,7 +19,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
         const handleLogout = async() => {
             console.log("first")
             try{
-                  const response = await fetch("http://localhost:4000/api/user/logout" , {
+                  const response = await fetch(`${BASE_URL}/api/user/logout` , {
                     method: 'POST',
                     credentials : "include",
                     headers : {

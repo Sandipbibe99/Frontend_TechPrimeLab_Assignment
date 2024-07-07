@@ -23,7 +23,7 @@ const Dashboard = () => {
   const [statusData, setStatusData] = useState("")
   const fetchCountAccordingToStatus = useCallback(async () => {
     try {
-      const response = await fetch("http://localhost:4000/api/project/getCountAccordingToStatus", {
+      const response = await fetch(`${BASE_URL}/api/project/getCountAccordingToStatus`, {
         method: "GET",
         headers: {
           "Content-type": "application/json"

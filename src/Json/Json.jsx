@@ -71,4 +71,5 @@ export const reasonData = [
     { name: "Location", value: 'location' },
     { name: "Status", value: 'status' },
 ]
-  
+
+export const BASE_URL = "https://backend-techprimelab-assignment.onrender.com";

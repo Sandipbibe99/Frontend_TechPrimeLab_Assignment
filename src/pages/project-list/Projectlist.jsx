@@ -49,7 +49,7 @@ const Projectlist = () => {
 
     const handleStatus = async (status, projectId) => {
         try {
-            const response = await fetch(`http://localhost:4000/api/project/updatestatus?_id=${projectId}&status=${status}`, {
+            const response = await fetch(`${BASE_URL}/api/project/updatestatus?_id=${projectId}&status=${status}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

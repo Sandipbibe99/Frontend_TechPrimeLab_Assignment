@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react'
+import React, {  useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../Json/Json'
 
@@ -8,11 +8,11 @@ import { BASE_URL } from '../Json/Json'
         const navigate = useNavigate();
       
 
-        const images = [
+        const images = useMemo(() => [
             { link: "/dashboard", alt: "Dashboard", src: "/image/Dashboard.svg" , activesrc : "/image/Dashboard-active.svg" },
             { link: "/project-listing", alt: "Project-list", src: "/image/Project-list.svg" , activesrc : "/image/Project-list-active.svg" },
             { link: "/add-project", alt: "Create-project", src: "/image/create-project.svg" , activesrc : "/image/create-project-active.svg" }
-        ]
+        ], []);
         const [activeIndex , setActiveIndex] =  useState(null)
         const location = useLocation();
        
@@ -20,7 +20,7 @@ import { BASE_URL } from '../Json/Json'
         useEffect(() => {
              const locationIndex = images.findIndex(img =>  img.link === location.pathname)
             setActiveIndex(locationIndex)
-        } , [location.pathname])
+        } , [location.pathname , images])
 
         const handleLogout = async() => {
             try{

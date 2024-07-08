@@ -8,7 +8,7 @@ export const ProjectProvider = ({ children }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [searchInput, setSearchInput] = useState('')
     const [selectInput, setSelectInput] = useState()
-    const [projectsPerPage, setProjectsPerPage] = useState(7);
+    const projectsPerPage = 7;
     
     const getProjectData = async () => {
         try {

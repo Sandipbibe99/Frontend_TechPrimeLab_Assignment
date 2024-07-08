@@ -26,7 +26,7 @@ export const SkeletonCard = () => (
 
 
   export const SkeletonProjectCardMobile = () => (
-    <div className="bg-white rounded-2xl p-4 shadow-lg animate-pulse">
+    <div className="bg-white rounded-2xl p-4 mb-3 shadow-lg animate-pulse">
       <div className="text-gray-900">
         <div className="flex justify-between">
           <span className="font-semibold text-[14.5px] w-3/4 h-3/4">{/* Placeholder for projectName */}</span>

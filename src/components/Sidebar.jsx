@@ -45,7 +45,7 @@ import { BASE_URL } from '../Json/Json'
         }
         
          return (
-            <div className='fixed top-0 sm:top-auto sm:bottom-0 left-0 w-14 sm:w-full h-screen sm:h-[9vh] bg-white shadow-lg rounded-sm sm:rounded-full' style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px"}}>
+            <div className='fixed top-0 sm:top-auto sm:bottom-0 left-0 w-14 sm:w-full h-screen sm:h-[8vh] bg-white shadow-lg rounded-sm sm:rounded-full' style={{boxShadow: "rgba(0, 0, 0, 0.1) 0px 4px 12px"}}>
             <div className='flex h-full justify-center sm:justify-evenly items-center flex-col sm:flex-row gap-8 sm:gap-4'>
                 {images.map((item, index) => (
                     <div key={index} className='relative flex flex-col items-center'>
@@ -57,7 +57,7 @@ import { BASE_URL } from '../Json/Json'
                         )}
                         {index === activeIndex && (
                              <>
-                             <div className='hidden sm:block absolute bottom-[-16px]  transform -translate-y-1/2 w-11 h-2 bg-blue-500 rounded-t-full'></div>
+                             <div className='hidden sm:block absolute bottom-[-30px]  transform -translate-y-1/2 w-14 h-3 bg-blue-500 rounded-t-full'></div>
                              <div className='block sm:hidden absolute left-[-14px] top-[-6px] transform -translate-x-1/2 w-2 h-10 bg-blue-500 rounded-r-full'></div>
                          </>
                         )}
